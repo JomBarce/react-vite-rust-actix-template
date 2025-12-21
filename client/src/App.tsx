@@ -1,35 +1,51 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+// import { useState, useEffect } from 'react';
+import './styles/App.css';
+import Hero from './components/Hero';
+import About from './components/About';
+import Services from './components/Services';
+import Contact from './components/Contact';
 
 function App() {
-  const [count, setCount] = useState(0)
+  // const [message, setMessage] = useState('');
+
+  // useEffect(() => {
+  //   fetch('/api/hello')
+  //     .then((res) => res.json())
+  //     .then((data: { message?: string }) => {
+  //       if (data.message) {
+  //         setMessage(data.message);
+  //       } else {
+  //         setMessage('No message received');
+  //       }
+  //     })
+  //     .catch((error) => {
+  //       console.error('Error fetching message:', error);
+  //       setMessage('Failed to load message');
+  //     });
+  // }, []);
 
   return (
     <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      <nav className="navbar">
+        <a href="#hero">Home</a>
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#contact">Contact</a>
+      </nav>
+
+      <main>
+        <Hero />
+        <About />
+        <Services />
+        <Contact />
+      </main>
+
+      {/* <div className="server-message">
+        <h1>{message || 'Loading...'}</h1>
+        <h2>{import.meta.env.MODE}</h2>
+      </div> */}
     </>
-  )
+  );
 }
 
-export default App
+export default App;
