@@ -1,4 +1,5 @@
 /target
 
-# environment files
+# Local environment files
 .env
+.env.*
