@@ -1,4 +1,4 @@
-// import { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import './styles/App.css';
 import Hero from './components/Hero';
 import About from './components/About';
@@ -6,23 +6,23 @@ import Services from './components/Services';
 import Contact from './components/Contact';
 
 function App() {
-  // const [message, setMessage] = useState('');
+  const [message, setMessage] = useState('');
 
-  // useEffect(() => {
-  //   fetch('/api/hello')
-  //     .then((res) => res.json())
-  //     .then((data: { message?: string }) => {
-  //       if (data.message) {
-  //         setMessage(data.message);
-  //       } else {
-  //         setMessage('No message received');
-  //       }
-  //     })
-  //     .catch((error) => {
-  //       console.error('Error fetching message:', error);
-  //       setMessage('Failed to load message');
-  //     });
-  // }, []);
+  useEffect(() => {
+    fetch('/api/hello')
+      .then((res) => res.json())
+      .then((data: { message?: string }) => {
+        if (data.message) {
+          setMessage(data.message);
+        } else {
+          setMessage('No message received');
+        }
+      })
+      .catch((error) => {
+        console.error('Error fetching message:', error);
+        setMessage('Failed to load message');
+      });
+  }, []);
 
   return (
     <>
@@ -40,10 +40,10 @@ function App() {
         <Contact />
       </main>
 
-      {/* <div className="server-message">
+      <div className="server-message">
         <h1>{message || 'Loading...'}</h1>
         <h2>{import.meta.env.MODE}</h2>
-      </div> */}
+      </div>
     </>
   );
 }
