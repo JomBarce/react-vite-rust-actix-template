@@ -1,0 +1,21 @@
+{
+  "name": "react-vite-rust-actix-template",
+  "version": "1.0.0",
+  "description": "A modern full-stack template featuring React + Vite on the frontend and Rust (Actix-web) on the backend.",
+  "main": "index.js",
+  "scripts": {
+    "install:all": "npm run install:client && npm run install:server",
+    "install:client": "npm install --prefix client",
+    "install:server": "cargo build --manifest-path server/Cargo.toml",
+    "dev:client": "npm --prefix client run dev",
+    "dev:server": "cargo run --manifest-path server/Cargo.toml",
+    "dev": "concurrently \"npm run dev:client\" \"npm run dev:server\""
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "concurrently": "^9.2.1"
+  }
+}
